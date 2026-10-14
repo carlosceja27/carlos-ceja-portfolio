@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Carlos Ceja | Communication Portfolio</title>
   <meta name="description" content="Senior communication portfolio of Carlos Ceja: Santa Clara University B.A. Communication Studies, U.S. Army veteran, design program manager.">
-  <meta name="theme-color" content="#101319">
+  <meta name="theme-color" content="#0c0f15">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kantumruy+Pro:wght@700&display=swap">
@@ -14,7 +14,11 @@
     (function() {
       try {
         var t = localStorage.getItem('cc-theme');
-        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+        if (t === 'dark' || t === 'light') {
+          document.documentElement.setAttribute('data-theme', t);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
       } catch (e) {}
     })();
   </script>
@@ -34,7 +38,7 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li>
-            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme" title="Toggle light/dark theme">
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to light theme" title="Toggle light/dark theme">
               <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
               <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
               <span class="theme-label">Theme</span>
@@ -61,7 +65,7 @@
           <p class="tagline">B.A. Communication Studies, Class of Fall 2026 · U.S. Army Veteran<br>
             Design Program Manager · Workflow Transformation · AI Tooling</p>
           <!-- DRAFT BIO: rewrite in your own words before submitting (course rule: no unedited AI text over 5 words). -->
-          <p class="bio">I'm a Communication Studies senior at Santa Clara University (Organizational Communication, graduating Fall 2026) and a U.S. Army veteran. I'm pursuing design program management and workflow transformation roles, and I plan to continue into SCU's M.S. in Business Analytics. My strengths: I align teams around change through bottom-up listening, and I turn messy workflows into automated systems.</p>
+          <p class="bio">I'm a Communication Studies senior at Santa Clara University (Organizational Communication, graduating Fall 2026) and a U.S. Army veteran. I'm pursuing design program management and workflow transformation roles, and I plan to continue into SCU's M.S. in Business Analytics.</p>
           <ul class="contact">
             <li><a class="contact-chip" href="https://www.linkedin.com/in/carlos-s-ceja" target="_blank" rel="noopener">LinkedIn<span aria-hidden="true"> ↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
             <li><a class="contact-chip" href="https://github.com/carlosceja27" target="_blank" rel="noopener">GitHub<span aria-hidden="true"> ↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
@@ -158,7 +162,7 @@
             </div>
             <p class="tags"><span class="badge course">MGMT 113</span><span class="badge ctx">Threshold Moment</span></p>
             <h3><a class="card-link" href="https://csceja-scu.github.io/transformation-deck/individual-transformation-image-narrative.html?slide=1" target="_blank" rel="noopener">Prototyping Transformation<span class="sr-only"> (opens in a new tab)</span></a></h3>
-            <p class="summary">I prototyped a six-week personal transformation and reported the results honestly, including where the data fell short.</p>
+            <p class="summary">A six-week personal transformation experiment documenting behavioral design, weekly metrics, and where the data fell short.</p>
             <p class="label" id="c1">Competencies articulated</p>
             <ul class="pills" aria-labelledby="c1">
               <li data-comp="Critical Thinking & Analysis">Critical Thinking &amp; Analysis</li>
@@ -178,7 +182,7 @@
             </div>
             <p class="tags"><span class="badge course">COMM 119</span><span class="badge ctx">Team SCaffold Inc.</span></p>
             <h3><a class="card-link" href="https://csceja-scu.github.io/gov-deck/gov-org-all-hands.html" target="_blank" rel="noopener">Government Org All Hands<span class="sr-only"> (opens in a new tab)</span></a></h3>
-            <p class="summary">With two teammates, I compared communication systems in three government organizations and presented the findings as an all-hands deck.</p>
+            <p class="summary">A comparative analysis of communication systems across three government organizations, presented as an executive all-hands deck.</p>
             <p class="label" id="c2">Competencies articulated</p>
             <ul class="pills" aria-labelledby="c2">
               <li data-comp="Ethical & Effective Comm">Ethical &amp; Effective Comm</li>
@@ -200,7 +204,7 @@
             </div>
             <p class="tags"><span class="badge course">COMM 129</span><span class="badge ctx">Entering the Workforce</span></p>
             <h3><a class="card-link" href="https://csceja-scu.github.io/advice-for-graduates/advice-for-graduates.html" target="_blank" rel="noopener">Advice for Graduates<span class="sr-only"> (opens in a new tab)</span></a></h3>
-            <p class="summary">As creative director on a five-person team, I helped build a peer-to-peer guide on AI, boundaries, and conflict at work.</p>
+            <p class="summary">A peer-to-peer interactive guide on navigating workplace AI, professional boundaries, and organizational conflict.</p>
             <p class="label" id="c3">Competencies articulated</p>
             <ul class="pills" aria-labelledby="c3">
               <li data-comp="Ethical & Effective Comm">Ethical &amp; Effective Comm</li>
@@ -221,7 +225,7 @@
             </div>
             <p class="tags"><span class="badge course">COMM 3</span><span class="badge ctx">Digital Storytelling</span></p>
             <h3><a class="card-link" href="https://csceja-scu.github.io/comm3-mental-health-portfolio/" target="_blank" rel="noopener">Mental Health at SCU<span class="sr-only"> (opens in a new tab)</span></a></h3>
-            <p class="summary">I interviewed a retired SCU journalism lecturer and documented the Fall 2021 student deaths and the campus response, with a content warning and support resources.</p>
+            <p class="summary">An investigative visual story documenting the Fall 2021 student mental-health crisis at SCU, institutional accountability, and campus support resources.</p>
             <p class="label" id="c4">Competencies articulated</p>
             <ul class="pills" aria-labelledby="c4">
               <li data-comp="Ethical & Effective Comm">Ethical &amp; Effective Comm</li>
@@ -243,7 +247,7 @@
             </div>
             <p class="tags"><span class="badge course">COMM 161</span><span class="badge ctx">Silicon Valley &amp; Housing</span></p>
             <h3>Ro Khanna Profile</h3>
-            <p class="summary">I reported a profile of Rep. Ro Khanna that connects his national housing bill to the local housing squeeze, with sources and data checks.</p>
+            <p class="summary">A policy profile of Rep. Ro Khanna connecting federal housing legislation to Santa Clara County's affordability crisis through primary sources and data verification.</p>
             <p class="label" id="c5">Competencies articulated</p>
             <ul class="pills" aria-labelledby="c5">
               <li data-comp="Ethical & Effective Comm">Ethical &amp; Effective Comm</li>
@@ -263,7 +267,7 @@
             </div>
             <p class="tags"><span class="badge course">COMM 161</span><span class="badge ctx">The Santa Clara</span></p>
             <h3><a class="card-link" href="https://thesantaclara.org/blog/better-thinkers-or-better-submitters" target="_blank" rel="noopener">Better Thinkers or Better Submitters?<span class="sr-only"> (opens in a new tab)</span></a></h3>
-            <p class="summary">I reported and published a feature on generative AI and critical thinking at SCU, built on student and faculty interviews.</p>
+            <p class="summary">A published feature in The Santa Clara examining generative AI and critical thinking on campus through student and faculty interviews.</p>
             <p class="label" id="c6">Competencies articulated</p>
             <ul class="pills" aria-labelledby="c6">
               <li data-comp="Ethical & Effective Comm">Ethical &amp; Effective Comm</li>
