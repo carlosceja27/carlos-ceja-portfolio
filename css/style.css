@@ -254,8 +254,8 @@ html[data-theme="light"] .hero-backdrop {
 }
 
 /* Sections */
-main section { padding-top: 64px; }
-main section.hero { padding-top: 42px; padding-bottom: 40px; }
+main section { padding-top: 84px; }
+main section.hero { padding-top: 48px; padding-bottom: 48px; }
 main h2 { font-size: 28px; margin-bottom: 16px; }
 .section-head {
   display: flex;
@@ -263,7 +263,7 @@ main h2 { font-size: 28px; margin-bottom: 16px; }
   justify-content: space-between;
   gap: 8px 24px;
   flex-wrap: wrap;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
 }
 .section-head h2 { font-size: 30px; margin: 0; }
 .section-sub { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
