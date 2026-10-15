@@ -1,6 +1,6 @@
 # Carlos Ceja — Communication Portfolio
 
-Senior Capstone Portfolio (`COMM 197`) for **Carlos Ceja** — B.A. Communication Studies (Organizational Communication, Class of Fall 2026) at Santa Clara University, U.S. Army Veteran, and Design Program Manager.
+Senior Capstone Portfolio (`COMM 197`) for **Carlos Ceja** — B.A. Communication Studies (Organizational Communication, Class of Winter 2027) at Santa Clara University, U.S. Army Veteran, and Design Program Manager.
 
 - **Live Portfolio:** [https://carlosceja27.github.io/carlos-ceja-portfolio/](https://carlosceja27.github.io/carlos-ceja-portfolio/)
 
