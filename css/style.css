@@ -254,8 +254,14 @@ html[data-theme="light"] .hero-backdrop {
 }
 
 /* Sections */
-main section { padding-top: 84px; }
-main section.hero { padding-top: 48px; padding-bottom: 48px; }
+#experience,
+#projects {
+  padding-top: 84px;
+}
+main section.hero {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
 main h2 { font-size: 28px; margin-bottom: 16px; }
 .section-head {
   display: flex;
