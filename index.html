@@ -6,6 +6,18 @@
   <title>Carlos Ceja | Communication Portfolio</title>
   <meta name="description" content="Senior communication portfolio of Carlos Ceja: Santa Clara University B.A. Communication Studies, U.S. Army veteran, design program manager.">
   <meta name="theme-color" content="#0c0f15">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://carlosceja27.github.io/carlos-ceja-portfolio/">
+  <meta property="og:title" content="Carlos Ceja | Senior Communication Portfolio (SCU COMM 197)">
+  <meta property="og:description" content="B.A. Communication Studies (Fall 2026) · U.S. Army Veteran · Design Program Manager. Six capstone case studies across SCU's seven core communication competencies.">
+  <meta property="og:image" content="https://carlosceja27.github.io/carlos-ceja-portfolio/assets/img/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Carlos Ceja | Senior Communication Portfolio (SCU COMM 197)">
+  <meta name="twitter:description" content="B.A. Communication Studies (Fall 2026) · U.S. Army Veteran · Design Program Manager. Six capstone case studies across SCU's seven core communication competencies.">
+  <meta name="twitter:image" content="https://carlosceja27.github.io/carlos-ceja-portfolio/assets/img/og-preview.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kantumruy+Pro:wght@700&display=swap">
@@ -156,9 +168,12 @@
       <ul class="grid" id="project-grid">
         <li data-competencies="Critical Thinking & Analysis|Technology & Media Literacy|Creativity & Innovation|Self & Vocational Development">
           <article class="card">
-            <div class="thumb-wrap">
+            <div class="thumb-wrap has-video">
               <img src="assets/img/prototyping.webp" width="390" height="216" loading="lazy"
                    alt="Framed presentation slide: Prototyping Transformation, From System Optimization to Human Design">
+              <video class="thumb-video" muted loop playsinline preload="metadata" aria-hidden="true" poster="assets/img/prototyping.webp">
+                <source src="assets/video/prototyping-hover.mp4" type="video/mp4">
+              </video>
             </div>
             <p class="tags"><span class="badge course">MGMT 113</span><span class="badge ctx">Threshold Moment</span></p>
             <h3><a class="card-link" href="https://csceja-scu.github.io/transformation-deck/individual-transformation-image-narrative.html?slide=1" target="_blank" rel="noopener">Prototyping Transformation<span class="sr-only"> (opens in a new tab)</span></a></h3>
@@ -241,9 +256,12 @@
 
         <li data-competencies="Ethical & Effective Comm|Critical Thinking & Analysis|Global & Civic Engagement|Technology & Media Literacy">
           <article class="card">
-            <div class="thumb-wrap">
+            <div class="thumb-wrap has-video">
               <img src="assets/img/ro-khanna-profile.webp" width="390" height="216" loading="lazy"
                    alt="Editorial cover illustration: Rep. Ro Khanna and the Silicon Valley Housing Squeeze, showing the US Capitol dome behind local residential rooftops">
+              <video class="thumb-video" muted loop playsinline preload="metadata" aria-hidden="true" poster="assets/img/ro-khanna-profile.webp">
+                <source src="assets/video/ro-khanna-hover.mp4" type="video/mp4">
+              </video>
             </div>
             <p class="tags"><span class="badge course">COMM 161</span><span class="badge ctx">Silicon Valley &amp; Housing</span></p>
             <h3>Ro Khanna Profile</h3>
@@ -394,6 +412,30 @@
       }
       window.addEventListener('resize', drawBackdrop, { passive: true });
       drawBackdrop();
+
+      // 4. Hover-to-play ambient video loops (respects prefers-reduced-motion)
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion) {
+        var videoCards = document.querySelectorAll('.card:has(.thumb-video)');
+        Array.prototype.forEach.call(videoCards, function(card) {
+          var vid = card.querySelector('.thumb-video');
+          if (!vid) return;
+          function startVid() {
+            card.classList.add('is-playing');
+            var p = vid.play();
+            if (p && typeof p.catch === 'function') p.catch(function() {});
+          }
+          function stopVid() {
+            card.classList.remove('is-playing');
+            vid.pause();
+            try { vid.currentTime = 0; } catch (e) {}
+          }
+          card.addEventListener('mouseenter', startVid);
+          card.addEventListener('mouseleave', stopVid);
+          card.addEventListener('focusin', startVid);
+          card.addEventListener('focusout', stopVid);
+        });
+      }
     })();
   </script>
 </body>
