@@ -21,7 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kantumruy+Pro:wght@700&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="canonical" href="https://carlosceja27.github.io/carlos-ceja-portfolio/">
+  <link rel="stylesheet" href="css/style.css?v=9">
   <script>
     (function() {
       try {
@@ -78,7 +79,8 @@
           <p class="tagline">Design Program Manager · U.S. Army Veteran · B.A. Communication Studies, Winter 2027</p>
           <p class="bio">Nine years of program leadership: five scaling UX programs at Workday and four running logistics for U.S. Army Special Operations Command. I study Organizational Communication at Santa Clara University because most broken workflows start as communication problems. Next: design program management roles and SCU's M.S. in Business Analytics.</p>
           <ul class="contact">
-            <li><a class="contact-chip is-primary" href="https://www.linkedin.com/in/carlos-s-ceja" target="_blank" rel="noopener">LinkedIn<span aria-hidden="true"> ↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><a class="contact-chip is-primary" href="assets/Carlos_Ceja_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)<span aria-hidden="true"> ↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><a class="contact-chip" href="https://www.linkedin.com/in/carlos-s-ceja" target="_blank" rel="noopener">LinkedIn<span aria-hidden="true"> ↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
             <li><a class="contact-chip" href="https://github.com/carlosceja27" target="_blank" rel="noopener">GitHub<span aria-hidden="true"> ↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
             <li><a class="contact-chip" href="mailto:carlosceja27@gmail.com">carlosceja27@gmail.com</a></li>
           </ul>
@@ -289,7 +291,7 @@
               <video class="thumb-video" muted loop playsinline preload="metadata" aria-hidden="true" poster="assets/img/ro-khanna-profile.webp">
                 <source src="assets/video/ro-khanna-hover.mp4" type="video/mp4">
               </video>
-              <span class="play-hint" aria-hidden="true">▶ Preview</span>
+              <span class="play-hint is-status" aria-hidden="true">In progress</span>
             </div>
             <p class="tags"><span class="badge course">COMM 161</span><span class="badge ctx">Silicon Valley &amp; Housing</span></p>
             <h3>Ro Khanna Profile</h3>
@@ -348,6 +350,7 @@
       var root = document.documentElement;
       var btn = document.getElementById('theme-toggle');
       function syncThemeBtn() {
+        var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.setAttribute('content', root.getAttribute('data-theme') === 'dark' ? '#0c0f15' : '#f7f8fb');
         var isDark = root.getAttribute('data-theme') === 'dark';
         if (btn) {
           btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
@@ -400,17 +403,22 @@
       });
       Array.prototype.forEach.call(document.querySelectorAll('.card .pills'), function(ul) {
         var lis = ul.querySelectorAll('li'), extra = lis.length - 3;
-        if (extra <= 0) return;
+        if (extra < 2) return;
         for (var i = 3; i < lis.length; i++) lis[i].classList.add('is-extra');
         var t = document.createElement('button');
         t.type = 'button'; t.className = 'pills-more';
         t.setAttribute('aria-expanded', 'false');
+        var card = ul.closest('.card'), ttl = card && card.querySelector('h3') ? (function(h){var c=h.cloneNode(true);Array.prototype.forEach.call(c.querySelectorAll('.sr-only,[aria-hidden]'),function(x){x.remove();});return c.textContent.trim();})(card.querySelector('h3')) : 'this project';
+        ul.id = ul.id || 'pills-' + Math.random().toString(36).slice(2, 8);
+        t.setAttribute('aria-controls', ul.id);
+        t.setAttribute('aria-label', 'Show ' + extra + ' more competencies for ' + ttl);
         t.textContent = '+' + extra + ' more';
         t.addEventListener('click', function(e) {
           e.stopPropagation();
           var open = ul.classList.toggle('is-expanded');
           t.setAttribute('aria-expanded', open ? 'true' : 'false');
           t.textContent = open ? 'Show less' : '+' + extra + ' more';
+          t.setAttribute('aria-label', (open ? 'Show fewer competencies for ' : 'Show ' + extra + ' more competencies for ') + ttl);
         });
         ul.insertAdjacentElement('afterend', t);
       });
@@ -468,7 +476,7 @@
       // 4. Hover-to-play ambient loops; scroll-into-view on touch; live reduced-motion
       var mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
       var noHover = window.matchMedia && window.matchMedia('(hover: none)').matches;
-      var videoCards = Array.prototype.slice.call(document.querySelectorAll('.card:has(.thumb-video)'));
+      var videoCards = Array.prototype.slice.call(document.querySelectorAll('.thumb-video')).map(function (v) { return v.closest('.card'); }).filter(Boolean);
       function startVid(card) {
         if (mq.matches) return;
         var vid = card.querySelector('.thumb-video');
@@ -495,5 +503,16 @@
       if (mq.addEventListener) mq.addEventListener('change', function() { if (mq.matches) videoCards.forEach(stopVid); });
     })();
   </script>
+    <script>
+      (function () {
+        var d = document.querySelector('details.reflection');
+        function openRefl() { if (d && location.hash === '#reflection') { d.open = true; } }
+        openRefl(); window.addEventListener('hashchange', openRefl);
+        Array.prototype.forEach.call(document.querySelectorAll('a[href="#reflection"]'), function (a) { a.addEventListener('click', function () { if (d) d.open = true; }); });
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) Array.prototype.forEach.call(document.querySelectorAll('.thumb-video'), function (v) { v.pause(); var c = v.closest('.card'); if (c) c.classList.remove('is-playing'); });
+        });
+      })();
+    </script>
 </body>
 </html>
