@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kantumruy+Pro:wght@700&display=swap">
   <link rel="canonical" href="https://carlosceja27.github.io/carlos-ceja-portfolio/">
-  <link rel="stylesheet" href="css/style.css?v=9">
+  <link rel="stylesheet" href="css/style.css?v=10">
   <script>
     (function() {
       try {
@@ -66,6 +66,10 @@
 
   <main id="main">
     <div class="hero-backdrop">
+      <video class="hero-video" muted loop playsinline preload="metadata" aria-hidden="true" poster="assets/img/hero-bg.webp">
+        <source src="assets/video/hero-bg-loop.mp4" type="video/mp4">
+      </video>
+      <div class="hero-scrim" aria-hidden="true"></div>
       <canvas id="hero-canvas" aria-hidden="true"></canvas>
       <section class="hero wrap" id="about" aria-labelledby="name">
         <div class="headshot-wrap">
@@ -512,6 +516,23 @@
         document.addEventListener('visibilitychange', function () {
           if (document.hidden) Array.prototype.forEach.call(document.querySelectorAll('.thumb-video'), function (v) { v.pause(); var c = v.closest('.card'); if (c) c.classList.remove('is-playing'); });
         });
+      })();
+    </script>
+<script>
+      (function () {
+        var root = document.documentElement, v = document.querySelector('.hero-video');
+        var mq = matchMedia('(prefers-reduced-motion: reduce)');
+        requestAnimationFrame(function () { root.classList.add('hero-ready'); });
+        if (!v) return;
+        function sync() {
+          var dark = root.getAttribute('data-theme') === 'dark';
+          if (dark && !mq.matches && !document.hidden) { var p = v.play(); if (p && p.catch) p.catch(function () {}); v.classList.add('is-on'); }
+          else { v.pause(); v.classList.toggle('is-on', dark && mq.matches); }
+        }
+        sync();
+        mq.addEventListener && mq.addEventListener('change', sync);
+        document.addEventListener('visibilitychange', sync);
+        new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
       })();
     </script>
 </body>

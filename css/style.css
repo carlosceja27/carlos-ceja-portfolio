@@ -281,8 +281,9 @@ html[data-theme="dark"] .icon-moon { display: none; }
 .hero-backdrop {
   position: relative;
   border-bottom: 1px solid var(--color-border-subtle);
-  background: var(--hero-fade), var(--hero-image) right center / cover no-repeat, var(--color-bg);
+  background: var(--hero-image) right center / cover no-repeat, var(--color-bg);
   overflow: hidden;
+  isolation: isolate;
 }
 #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .hero {
@@ -595,3 +596,43 @@ main h2 { font-size: var(--fs-2xl); margin-bottom: var(--space-4); }
   .filter-bar > * { flex: none; scroll-snap-align: start; white-space: nowrap; }
 }
 .play-hint.is-status { opacity: 1; }
+
+/* ==========================================================================
+   Hero motion: ambient video + staggered entrance
+   ========================================================================== */
+.hero-video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: right center;
+  z-index: -2; opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1.6s var(--ease-out, ease-out), transform 8s var(--ease-out, ease-out);
+}
+.hero-video.is-on { opacity: 1; transform: scale(1); }
+.hero-scrim { position: absolute; inset: 0; z-index: -1; background: var(--hero-fade); pointer-events: none; }
+html:not([data-theme="dark"]) .hero-video { display: none; }
+
+@keyframes heroRise { from { opacity: 0; transform: translateY(14px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes heroPortrait { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
+@keyframes heroLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+html.hero-ready .headshot-wrap { animation: heroPortrait .9s var(--ease-out, ease-out) both; }
+html.hero-ready .hero-text > * { animation: heroRise .8s var(--ease-out, ease-out) both; }
+html.hero-ready .hero-text > :nth-child(1) { animation-delay: .15s; }
+html.hero-ready .hero-text > :nth-child(2) { animation-delay: .3s; }
+html.hero-ready .hero-text > :nth-child(3) { animation-delay: .5s; }
+html.hero-ready .hero-text > :nth-child(4) { animation-delay: .7s; }
+html.hero-ready .hero-text > :nth-child(5) { animation-delay: .9s; }
+html.hero-ready .status-pill { animation: heroRise .7s var(--ease-out, ease-out) 1.05s both; }
+.hero-backdrop::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; z-index: 2;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  transform-origin: left; transform: scaleX(0); opacity: .6;
+}
+html.hero-ready .hero-backdrop::after { animation: heroLine 1.4s var(--ease-out, ease-out) .6s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.hero-ready .headshot-wrap, html.hero-ready .hero-text > *, html.hero-ready .status-pill,
+  html.hero-ready .hero-backdrop::after { animation: none; }
+  .hero-backdrop::after { transform: none; }
+  .hero-video { transition: none; transform: none; }
+}
