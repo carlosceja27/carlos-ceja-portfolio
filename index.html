@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kantumruy+Pro:wght@700&display=swap">
   <link rel="canonical" href="https://carlosceja27.github.io/carlos-ceja-portfolio/">
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=11">
   <script>
     (function() {
       try {
@@ -95,10 +95,20 @@
     <section class="wrap" id="experience" aria-labelledby="exp-h">
       <div class="section-head">
         <h2 id="exp-h">Experience &amp; Education</h2>
-        <p class="note">Program Management · Operations · Academic Honors</p>
+        <p class="note">Most recent first · <span class="key key--edu">Education</span> <span class="key key--work">Experience</span> <span class="key key--build">Independent</span></p>
       </div>
       <ul class="exp-band">
-        <li>
+        <li class="exp-item exp--edu">
+          <p class="exp-kind">Education · Current</p>
+          <div class="exp-top">
+            <h3>Santa Clara University</h3>
+            <span class="exp-metric">Lambda Pi Eta</span>
+          </div>
+          <p class="sub">B.A. Communication Studies · Expected Winter 2027</p>
+          <p>Organizational Communication emphasis. Lambda Pi Eta, the National Communication Association honor society.</p>
+        </li>
+        <li class="exp-item exp--work">
+          <p class="exp-kind">Experience</p>
           <div class="exp-top">
             <h3>Workday</h3>
             <span class="exp-metric">&lt;10% → 99%+</span>
@@ -106,7 +116,8 @@
           <p class="sub">UX Program Manager · 2020–2025</p>
           <p>Founded Workday's first UX Community of Practice (200+ practitioners). Built Jira and Asana automation that raised executive visibility into UX projects from under 10% to 99%+.</p>
         </li>
-        <li>
+        <li class="exp-item exp--work">
+          <p class="exp-kind">Experience</p>
           <div class="exp-top">
             <h3>U.S. Army Special Operations Command</h3>
             <span class="exp-metric">$20M+ Zero Loss</span>
@@ -114,15 +125,8 @@
           <p class="sub">Logistics Program Manager · 2015–2019</p>
           <p>Led a 27-person logistics unit from paper records to SAP enterprise software with 100% digital adoption. Accounted for $20M+ in assets with zero loss.</p>
         </li>
-        <li>
-          <div class="exp-top">
-            <h3>Santa Clara University</h3>
-            <span class="exp-metric">Lambda Pi Eta</span>
-          </div>
-          <p class="sub">B.A. Communication Studies · Winter 2027</p>
-          <p>Organizational Communication emphasis. Lambda Pi Eta, the National Communication Association honor society.</p>
-        </li>
-        <li>
+        <li class="exp-item exp--build">
+          <p class="exp-kind">Independent</p>
           <div class="exp-top">
             <h3>Credentials &amp; builds</h3>
             <span class="exp-metric">3 AI Agents</span>
@@ -161,7 +165,7 @@
       <div class="section-head">
         <div>
           <h2 id="proj-h">Key Projects &amp; Competencies</h2>
-          <p class="section-sub">Ordered by course progression, foundational to advanced. Filter by competency to see where each one is demonstrated.</p>
+          <p class="section-sub">Top row: professional communication. Bottom row: investigative journalism. Each card names its medium; filter by competency to see where each one is demonstrated.</p>
         </div>
         <p class="note" id="filter-status" aria-live="polite">Showing all 6 projects · Evaluated on SCU Core Competencies</p>
       </div>
@@ -194,38 +198,38 @@
       </div>
 
       <ul class="grid" id="project-grid">
-        <li data-competencies="Ethical & Effective Comm|Critical Thinking & Analysis|Collaboration & Leadership|Global & Civic Engagement|Technology & Media Literacy|Self & Vocational Development">
+        <li class="row-label"><span>Professional communication</span></li>
+        <li data-competencies="Critical Thinking & Analysis|Technology & Media Literacy|Creativity & Innovation|Self & Vocational Development">
           <article class="card">
             <div class="thumb-wrap has-video">
-              <img src="assets/img/mental-health-scu.webp" width="390" height="216" loading="lazy"
-                   alt="Framed editorial hero: What the institution suppressed, Fall 2021 at Santa Clara University">
-              <video class="thumb-video" muted loop playsinline preload="metadata" aria-hidden="true" poster="assets/img/mental-health-scu.webp">
-                <source src="assets/video/mental-health-hover.mp4" type="video/mp4">
+              <img src="assets/img/prototyping.webp" width="390" height="216" loading="lazy"
+                   alt="Framed presentation slide: Prototyping Transformation, From System Optimization to Human Design">
+              <video class="thumb-video" muted loop playsinline preload="metadata" aria-hidden="true" poster="assets/img/prototyping.webp">
+                <source src="assets/video/prototyping-hover.mp4" type="video/mp4">
               </video>
               <span class="play-hint" aria-hidden="true">▶ Preview</span>
             </div>
-            <p class="tags"><span class="badge course">COMM 3</span><span class="badge ctx">Digital Storytelling</span></p>
-            <h3><a class="card-link" href="https://csceja-scu.github.io/comm3-mental-health-portfolio/" target="_blank" rel="noopener">Mental Health at SCU<span class="sr-only"> (opens in a new tab)</span></a></h3>
-            <p class="summary">An investigative visual story on the Fall 2021 student mental-health crisis at SCU, examining how the institution framed the crisis against what students reported, with a guide to campus support.</p>
-            <p class="label" id="c4">Primary competencies</p>
-            <ul class="pills" aria-labelledby="c4">
-              <li data-comp="Ethical & Effective Comm">Ethical &amp; Effective Comm</li>
-              <li data-comp="Global & Civic Engagement">Global &amp; Civic Engagement</li>
+            <p class="medium-line"><span class="badge medium"><span class="sr-only">Medium: </span>Case Study</span></p>
+            <p class="tags"><span class="badge course">MGMT 113</span><span class="badge ctx">Threshold Moment</span></p>
+            <h3><a class="card-link" href="https://csceja-scu.github.io/transformation-deck/individual-transformation-image-narrative.html?slide=1" target="_blank" rel="noopener">Prototyping Transformation<span class="sr-only"> (opens in a new tab)</span></a></h3>
+            <p class="summary">Can a habit be redesigned like a product? A six-week prototyping experiment applying behavioral design, tracked with weekly metrics, including an honest account of where the data fell short.</p>
+            <p class="label" id="c1">Primary competencies</p>
+            <ul class="pills" aria-labelledby="c1">
               <li data-comp="Critical Thinking & Analysis">Critical Thinking &amp; Analysis</li>
-              <li data-comp="Collaboration & Leadership">Collaboration &amp; Leadership</li>
-              <li data-comp="Technology & Media Literacy">Technology &amp; Media Literacy</li>
               <li data-comp="Self & Vocational Development">Self &amp; Vocational Development</li>
+              <li data-comp="Creativity & Innovation">Creativity &amp; Innovation</li>
+              <li data-comp="Technology & Media Literacy">Technology &amp; Media Literacy</li>
             </ul>
-            <span class="btn" aria-hidden="true">Read Portfolio<span aria-hidden="true"> ↗</span></span>
+            <span class="btn" aria-hidden="true">View Case Study<span aria-hidden="true"> ↗</span></span>
           </article>
         </li>
-
         <li data-competencies="Ethical & Effective Comm|Critical Thinking & Analysis|Collaboration & Leadership|Technology & Media Literacy|Creativity & Innovation|Self & Vocational Development">
           <article class="card">
             <div class="thumb-wrap">
               <img src="assets/img/gov-all-hands.webp" width="390" height="216" loading="lazy"
                    alt="Framed presentation slide: Government Org All Hands, Team SCaffold Inc.">
             </div>
+            <p class="medium-line"><span class="badge medium"><span class="sr-only">Medium: </span>Business Presentation</span></p>
             <p class="tags"><span class="badge course">COMM 119</span><span class="badge ctx">Team SCaffold Inc.</span></p>
             <h3><a class="card-link" href="https://csceja-scu.github.io/gov-deck/gov-org-all-hands.html" target="_blank" rel="noopener">Government Org All Hands<span class="sr-only"> (opens in a new tab)</span></a></h3>
             <p class="summary">How do public agencies move information from leadership to the front line? A team comparison of three government organizations through organizational culture and channel choice, delivered as an executive all-hands deck.</p>
@@ -241,13 +245,13 @@
             <span class="btn" aria-hidden="true">View Presentation<span aria-hidden="true"> ↗</span></span>
           </article>
         </li>
-
         <li data-competencies="Ethical & Effective Comm|Collaboration & Leadership|Technology & Media Literacy|Creativity & Innovation|Self & Vocational Development">
           <article class="card">
             <div class="thumb-wrap">
               <img src="assets/img/advice-for-graduates.webp" width="390" height="216" loading="lazy"
                    alt="Framed presentation slide: Advice for Graduates, Entering the Workforce">
             </div>
+            <p class="medium-line"><span class="badge medium"><span class="sr-only">Medium: </span>Interactive Guide</span></p>
             <p class="tags"><span class="badge course">COMM 129</span><span class="badge ctx">Entering the Workforce</span></p>
             <h3><a class="card-link" href="https://csceja-scu.github.io/advice-for-graduates/advice-for-graduates.html" target="_blank" rel="noopener">Advice for Graduates<span class="sr-only"> (opens in a new tab)</span></a></h3>
             <p class="summary">What new graduates are rarely told: an interactive guide on workplace AI norms, boundary management, and organizational conflict, written for the SCU Alumni Association audience.</p>
@@ -262,31 +266,33 @@
             <span class="btn" aria-hidden="true">View Guide<span aria-hidden="true"> ↗</span></span>
           </article>
         </li>
-
-        <li data-competencies="Critical Thinking & Analysis|Technology & Media Literacy|Creativity & Innovation|Self & Vocational Development">
+        <li class="row-label"><span>Investigative journalism</span></li>
+        <li data-competencies="Ethical & Effective Comm|Critical Thinking & Analysis|Collaboration & Leadership|Global & Civic Engagement|Technology & Media Literacy|Self & Vocational Development">
           <article class="card">
             <div class="thumb-wrap has-video">
-              <img src="assets/img/prototyping.webp" width="390" height="216" loading="lazy"
-                   alt="Framed presentation slide: Prototyping Transformation, From System Optimization to Human Design">
-              <video class="thumb-video" muted loop playsinline preload="metadata" aria-hidden="true" poster="assets/img/prototyping.webp">
-                <source src="assets/video/prototyping-hover.mp4" type="video/mp4">
+              <img src="assets/img/mental-health-scu.webp" width="390" height="216" loading="lazy"
+                   alt="Framed editorial hero: What the institution suppressed, Fall 2021 at Santa Clara University">
+              <video class="thumb-video" muted loop playsinline preload="metadata" aria-hidden="true" poster="assets/img/mental-health-scu.webp">
+                <source src="assets/video/mental-health-hover.mp4" type="video/mp4">
               </video>
               <span class="play-hint" aria-hidden="true">▶ Preview</span>
             </div>
-            <p class="tags"><span class="badge course">MGMT 113</span><span class="badge ctx">Threshold Moment</span></p>
-            <h3><a class="card-link" href="https://csceja-scu.github.io/transformation-deck/individual-transformation-image-narrative.html?slide=1" target="_blank" rel="noopener">Prototyping Transformation<span class="sr-only"> (opens in a new tab)</span></a></h3>
-            <p class="summary">Can a habit be redesigned like a product? A six-week prototyping experiment applying behavioral design, tracked with weekly metrics, including an honest account of where the data fell short.</p>
-            <p class="label" id="c1">Primary competencies</p>
-            <ul class="pills" aria-labelledby="c1">
+            <p class="medium-line"><span class="badge medium"><span class="sr-only">Medium: </span>Multimedia Story</span></p>
+            <p class="tags"><span class="badge course">COMM 3</span><span class="badge ctx">Digital Storytelling</span></p>
+            <h3><a class="card-link" href="https://csceja-scu.github.io/comm3-mental-health-portfolio/" target="_blank" rel="noopener">Mental Health at SCU<span class="sr-only"> (opens in a new tab)</span></a></h3>
+            <p class="summary">An investigative visual story on the Fall 2021 student mental-health crisis at SCU, examining how the institution framed the crisis against what students reported, with a guide to campus support.</p>
+            <p class="label" id="c4">Primary competencies</p>
+            <ul class="pills" aria-labelledby="c4">
+              <li data-comp="Ethical & Effective Comm">Ethical &amp; Effective Comm</li>
+              <li data-comp="Global & Civic Engagement">Global &amp; Civic Engagement</li>
               <li data-comp="Critical Thinking & Analysis">Critical Thinking &amp; Analysis</li>
-              <li data-comp="Self & Vocational Development">Self &amp; Vocational Development</li>
-              <li data-comp="Creativity & Innovation">Creativity &amp; Innovation</li>
+              <li data-comp="Collaboration & Leadership">Collaboration &amp; Leadership</li>
               <li data-comp="Technology & Media Literacy">Technology &amp; Media Literacy</li>
+              <li data-comp="Self & Vocational Development">Self &amp; Vocational Development</li>
             </ul>
-            <span class="btn" aria-hidden="true">View Case Study<span aria-hidden="true"> ↗</span></span>
+            <span class="btn" aria-hidden="true">Read Portfolio<span aria-hidden="true"> ↗</span></span>
           </article>
         </li>
-
         <li data-competencies="Ethical & Effective Comm|Critical Thinking & Analysis|Global & Civic Engagement|Technology & Media Literacy">
           <article class="card">
             <div class="thumb-wrap has-video">
@@ -297,6 +303,7 @@
               </video>
               <span class="play-hint is-status" aria-hidden="true">In progress</span>
             </div>
+            <p class="medium-line"><span class="badge medium"><span class="sr-only">Medium: </span>Policy Profile</span></p>
             <p class="tags"><span class="badge course">COMM 161</span><span class="badge ctx">Silicon Valley &amp; Housing</span></p>
             <h3>Ro Khanna Profile</h3>
             <p class="summary">A policy profile of Rep. Ro Khanna connecting federal housing legislation to Santa Clara County's affordability crisis through primary sources and data verification.</p>
@@ -310,7 +317,6 @@
             <p class="status-note">In progress · Publication pipeline</p>
           </article>
         </li>
-
         <li data-competencies="Ethical & Effective Comm|Critical Thinking & Analysis|Collaboration & Leadership|Global & Civic Engagement|Technology & Media Literacy|Creativity & Innovation|Self & Vocational Development">
           <article class="card">
             <div class="thumb-wrap has-video">
@@ -321,6 +327,7 @@
               </video>
               <span class="play-hint" aria-hidden="true">▶ Preview</span>
             </div>
+            <p class="medium-line"><span class="badge medium"><span class="sr-only">Medium: </span>News Feature</span></p>
             <p class="tags"><span class="badge course">COMM 161</span><span class="badge ctx">The Santa Clara</span></p>
             <h3><a class="card-link" href="https://thesantaclara.org/blog/better-thinkers-or-better-submitters" target="_blank" rel="noopener">Better Thinkers or Better Submitters?<span class="sr-only"> (opens in a new tab)</span></a></h3>
             <p class="summary">Is generative AI making students better thinkers or just faster submitters? A published feature in The Santa Clara built on student and faculty interviews.</p>
@@ -373,7 +380,7 @@
 
       // 2. Interactive competency filter bar
       var chips = Array.prototype.slice.call(document.querySelectorAll('.filter-chip'));
-      var items = Array.prototype.slice.call(document.querySelectorAll('#project-grid > li'));
+      var items = Array.prototype.slice.call(document.querySelectorAll('#project-grid > li:not(.row-label)'));
       var status = document.getElementById('filter-status');
 
       function applyFilter(comp) {
@@ -393,6 +400,7 @@
           c.classList.toggle('is-active', active);
           c.setAttribute('aria-pressed', active ? 'true' : 'false');
         });
+        var grid = document.getElementById('project-grid'); if (grid) grid.classList.toggle('is-filtering', comp !== 'all');
         if (status) {
           status.textContent = comp === 'all'
             ? 'Showing all ' + items.length + ' projects · Evaluated on SCU Core Competencies'
